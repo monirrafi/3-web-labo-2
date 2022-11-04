@@ -80,8 +80,6 @@ let formDateFin = () => {
         <div class="col-md-6">
             <label for="anneeF" class="form-label">Année</label>
             <input type="text" class="form-control" id="anneeF" name="annneeF" value="" required>
-        </div>
-        <div class="col-md-6">
             <label for="moisF" class="form-label">Mois</label>
             <input type="text" class="form-control" id="moisF" name="moisF" value="" required>
         </div>
