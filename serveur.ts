@@ -5,7 +5,7 @@ import bodyParser from "body-parser";
 import http from "http";
 import path from "path";
 
-import { listePermisDeType, listePermisDeVille, listerPermisFini,listeTriee } from "./app/src/serveur/permis/controleurPermis";
+import { chargerTablePermis, listePermisDeType, listePermisDeVille, listerPermisFini,listeTriee } from "./app/src/serveur/permis/controleurPermis";
 
 // Création d'un serveur Node dont les requêtes entrantes
 // et sortantes sont gérées par express.
@@ -29,6 +29,7 @@ exp.use(express.urlencoded({ extended: true }));
 //Traiter les requêtes provenant du client et les réponses à retourner au client
 exp.get("/", async (req: Request, res: Response) => {
   res.sendFile(path.join(__dirname,  "/app/src/index.html"));
+  res.send(chargerTablePermis())
 });
 
 exp.get("/permis", async (req: Request, res: Response) => {
