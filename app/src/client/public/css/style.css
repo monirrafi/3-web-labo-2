@@ -1,0 +1,28 @@
+.bgnavbarperso {
+   background-color: black !important;
+}
+
+.bgnavbarperso li a{
+color: #ffffff !important;
+}
+
+#formAnnee{
+    display: none;
+}
+
+body{
+    background-image: url('../../../serveur/donnees/bg3.jpg') ;
+   background-size:cover ;
+    
+}
+label{
+    font-size:xx-large;
+    color: rgb(61, 6, 190);
+}
+input{
+    background-color: rgb(184, 224, 245) !important;
+    /*border-style: solid !important;*/
+}
+button{
+    background-color: rgb(61, 6, 190) !important ;
+}
