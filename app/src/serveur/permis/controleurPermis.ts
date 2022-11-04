@@ -3,6 +3,22 @@ import path from "path";
 import { open } from "node:fs/promises";
 import { Permis } from "./permis";
 
+const creerBD = async (): Promise<Array<Permis>> => {
+  //let auteur = req.body.auteur;
+  let cheminFichier = path.join(__dirname, "../donnees/permisAnimaux.json");
+  let listePermis: Array<Permis> = [];
+  try {
+    let fichier = await open(cheminFichier);
+    const contenu: string = await fichier.readFile("utf-8");
+    fichier.close();
+       
+    listePermis = JSON.parse(contenu); //Convertir un string en JSON objet
+  } catch (e: any) { 
+  } finally {
+    return listePermis;
+  }
+};
+
 const chargerFichierJsonEnObjetJson = async (): Promise<Array<Permis>> => {
   //let auteur = req.body.auteur;
   let cheminFichier = path.join(__dirname, "../donnees/permisAnimaux.json");
