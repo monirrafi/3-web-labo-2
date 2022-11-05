@@ -1,5 +1,5 @@
 .bgnavbarperso {
-   background-color: black !important;
+   background-color: rgb(106, 22, 106) !important;
 }
 
 .bgnavbarperso li a{
@@ -7,14 +7,19 @@
 color: yellow !important;
 padding-right: 100px !important;
 }
+.pour{
+    color:orange !important;
+    margin-right: 50px !important;
 
+}
 #formAnnee{
     display: none;
 }
 
 body{
-    background-image: url('../../../serveur/donnees/bg1.jpg') ;
+    background-image: url('../../../serveur/donnees/big2.jpg') ;
    background-size:cover ;
+   color: aliceblue;
     
 }
 label{
@@ -23,7 +28,7 @@ label{
 }
 input{
     background-color: rgb(184, 224, 245) !important;
-    /*border-style: solid !important;*/
+    
 }
 button{
     background-color: rgb(61, 6, 190) !important ;
