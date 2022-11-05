@@ -3,7 +3,9 @@
 }
 
 .bgnavbarperso li a{
-color: #ffffff !important;
+/*color: #ffffff !important;*/
+color: yellow !important;
+padding-right: 100px !important;
 }
 
 #formAnnee{
@@ -11,7 +13,7 @@ color: #ffffff !important;
 }
 
 body{
-    background-image: url('../../../serveur/donnees/bg3.jpg') ;
+    background-image: url('../../../serveur/donnees/bg1.jpg') ;
    background-size:cover ;
     
 }
