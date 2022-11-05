@@ -2,7 +2,6 @@
   "name": "labo1-ws",
   "version": "1.0.0",
   "description": "Laboratoire 1 de WS",
-  "type": "module",
   "main": "index.js",
   "scripts": {
     "dev": "nodemon --watch ./ -e ts --exec ts-node ./serveur.ts",

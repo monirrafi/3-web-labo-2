@@ -26,7 +26,7 @@ const listerTout = () => {
 }
 
 
-const listerToutSelonTypeAnimal = () => {
+const listerToutTriee = () => {
     $.ajax({
         url:"/listeTriee",
         type:"GET",
