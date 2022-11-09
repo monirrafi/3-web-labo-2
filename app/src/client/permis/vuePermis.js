@@ -1,6 +1,6 @@
 const construireEntetesPermis = () => {
     const entete = `
-        <table class="table table-striped">
+        <table class="table table-sm table-dark">
             <thead>
                 <tr>
                 <th class="table-info" scope="col">Numero Permis</th>
@@ -57,7 +57,7 @@ let formType = () => {
     <form class="row g-3 needs-validation" novalidate>
         <div class="col-md-6">
             <label for="typea" class="form-label">Type Animal</label>
-            <input type="text" class="form-control" id="typea" name="typea" value="" required>
+            <input type="text"   class="form-outline w-25"  class="form-control" id="typea" name="typea" value="" required>
         </div>
         <div class="col-12">
             <button class="btn btn-primary" type="button" onClick="listerParType();">Envoyer</button>
@@ -72,7 +72,7 @@ let formVille = () => {
     <form class="row g-3 needs-validation" novalidate>
         <div class="col-md-6">
             <label for="villea" class="form-label">ville</label>
-            <input type="text" class="form-control" id="villea" name="villea" value="" required>
+            <input type="text"   class="form-outline w-50" class="form-control" id="villea" name="villea" value="" required>
         </div>
         <div class="col-12">
             <button class="btn btn-primary" type="button" onClick="listerParVille();">Envoyer</button>
@@ -87,9 +87,9 @@ let formDateFin = () => {
     <form class="row g-3 needs-validation" novalidate>
         <div class="col-md-6">
             <label for="anneeF" class="form-label">Année</label>
-            <input type="text" class="form-control" id="anneeF" name="annneeF" value="" required>
+            <input type="text"   class="form-outline w-25" class="form-control" id="anneeF" name="annneeF" value="" required>
             <label for="moisF" class="form-label">Mois</label>
-            <input type="text" class="form-control" id="moisF" name="moisF" value="" required>
+            <input type="text"   class="form-outline w-25" class="form-control" id="moisF" name="moisF" value="" required>
         </div>
         <div class="col-12">
             <button class="btn btn-primary" type="button" onClick="listerPermisFin();">Envoyer</button>

@@ -1,5 +1,6 @@
 .bgnavbarperso {
-   background-color: rgb(106, 22, 106) !important;
+   /*background-color: rgb(106, 22, 106) !important;*/
+   background-color: purple !important;
 }
 
 .bgnavbarperso li a{
@@ -24,12 +25,18 @@ body{
 }
 label{
     font-size:xx-large;
-    color: rgb(61, 6, 190);
+    color: purple;/* rgb(61, 6, 190);*/
 }
 input{
-    background-color: rgb(184, 224, 245) !important;
+   /* background-color: rgb(184, 224, 245) !important;*/
+   background-color: white !important;
+   
     
 }
 button{
-    background-color: rgb(61, 6, 190) !important ;
+/*    background-color: rgb(61, 6, 190) !important ;
+*/
+background-color: purple !important ;
+
+
 }
