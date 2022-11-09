@@ -12,6 +12,8 @@ const pool = createPool({
   //connectionLimit: 5
 
 });
+
+
 //const insererPermis = async (no,debut,fin,ville,typeAnimal,nomAnimal)=> {
 const insererPermis = async (strSql:string) =>{
   //no:string,debut:string,fin:string,ville:string,typeAnimal:string,nomAnimal:string)=> {
@@ -29,6 +31,34 @@ if (conn) return conn.end();
 }
 
 }
+const chargerFichierJsonEnObjetJson = async (): Promise<Array<Permis>> => {
+  //let auteur = req.body.auteur;
+  let cheminFichier = path.join(__dirname, "../donnees/permisAnimaux.json");
+  let listePermis: Array<Permis> = [];
+  try {
+   let fichier = await open(cheminFichier);
+   const contenu: string = await fichier.readFile("utf-8");
+   fichier.close();
+      
+   listePermis = JSON.parse(contenu); //Convertir un string en JSON objet
+  } catch (e: any) { 
+  } finally {
+   return listePermis;
+  }
+  };
+  const chargerTablePermis = async () =>{
+  let listePermis: Array<Permis> = await chargerFichierJsonEnObjetJson();
+  for (let unAnimal of listePermis) {
+    let strSql:string = "INSERT INTO permis value ('" + unAnimal.Permis_Numéro + 
+    "','"+ unAnimal.Permis_Date_de_début +
+     "','"+ unAnimal.Permis_Date_de_fin + "','"+ unAnimal.Gardien_Territoire_ex_villes + 
+     "','"+ unAnimal.Animal_Type_de_permis + "','"+ unAnimal.Animal_Nom + "'";
+     "insert into permis value ('16987','2020-10-01','2023-10-01','Montreal','Chien','kiko'";
+     insererPermis(strSql);
+  }
+  
+  }
+  
 
 const exucteRequetePermis = async (strSql:string): Promise<Array<Permis>> =>{
   //let listePermis: Array<Permis> = [];
@@ -46,33 +76,7 @@ const exucteRequetePermis = async (strSql:string): Promise<Array<Permis>> =>{
   }
   }
   
-const chargerFichierJsonEnObjetJson = async (): Promise<Array<Permis>> => {
-//let auteur = req.body.auteur;
-let cheminFichier = path.join(__dirname, "../donnees/permisAnimaux.json");
-let listePermis: Array<Permis> = [];
-try {
- let fichier = await open(cheminFichier);
- const contenu: string = await fichier.readFile("utf-8");
- fichier.close();
-    
- listePermis = JSON.parse(contenu); //Convertir un string en JSON objet
-} catch (e: any) { 
-} finally {
- return listePermis;
-}
-};
 
-const chargerTablePermis = async () =>{
-let listePermis: Array<Permis> = await chargerFichierJsonEnObjetJson();
-for (let unAnimal of listePermis) {
-  let strSql:string = "INSERT INTO permis value ('" + unAnimal.Permis_Numéro + 
-  "','"+ unAnimal.Permis_Date_de_début +
-   "','"+ unAnimal.Permis_Date_de_fin + "','"+ unAnimal.Gardien_Territoire_ex_villes + 
-   "','"+ unAnimal.Animal_Type_de_permis + "','"+ unAnimal.Animal_Nom + "'";
-   insererPermis(strSql);
-}
-
-}
 export const listerTout = async (req: Request): Promise<object> => {
   return exucteRequetePermis("select * from permis");
 };
