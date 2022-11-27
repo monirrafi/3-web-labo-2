@@ -15,15 +15,6 @@ const construireEntetesPermis = () => {
     `;
     return entete;
 }
-/*
-        <th>${unAnimal.Permis_Numéro}</th>
-        <td>${unAnimal.Permis_Date_de_début}</td>
-        <td>${unAnimal.Permis_Date_de_fin}</td>
-        <td>${unAnimal.Gardien_Territoire_ex_villes}</td>
-        <td>${unAnimal.Animal_Type_de_permis}</td>
-        <td>${unAnimal.Animal_Nom}</td>
-
-*/
 const construirePermis = (unAnimal) =>{
     let tr=`<tr>
         <th>${unAnimal.no_permis}</th>

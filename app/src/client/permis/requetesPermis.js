@@ -1,4 +1,4 @@
-/*
+
 let compareTo = (unAnimal, unAutre) => {
     if(unAnimal.Animal_Type_de_permis > unAutre.Animal_Type_de_permis){
         return 1;
@@ -7,7 +7,7 @@ let compareTo = (unAnimal, unAutre) => {
     } else{
         return 0;
     }
-};*/
+};
 const listerTout = () => {
     $.ajax({
         url:"/permis",

@@ -78,23 +78,51 @@ const exucteRequetePermis = async (strSql:string): Promise<Array<Permis>> =>{
   
 
 export const listerTout = async (req: Request): Promise<object> => {
-  return exucteRequetePermis("select * from permis");
+    return exucteRequetePermis("select * from permis");
 };
 
 export const listeTriee = async (req: Request): Promise<object> => {
-  
-  let listePermis: Array<Permis> = await exucteRequetePermis("select * from permis");
+  return exucteRequetePermis("select * from permis order by type_animal");
+  /*
+  let listePermis: Array<Permis> = await exucteRequetePermis("select * from permis order by type_animal");
+  return listePermis;
   const listTrier = listePermis.sort((a:Permis, b:Permis):any=>{
-    if(a.Gardien_Territoire_ex_villes > b.Gardien_Territoire_ex_villes){
+    
+    if(a.Animal_Type_de_permis > b.Animal_Type_de_permis){
         return 1;
-    }else if(a.Gardien_Territoire_ex_villes < b.Gardien_Territoire_ex_villes){
+    }else if(a.Animal_Type_de_permis < b.Animal_Type_de_permis){
         return -1;
     } else{
         return 0;
     }
-  });
+  })
   
- return listTrier;
+  //console.log(listePermis.length);
+  //const listTrier = listePermis.sort((a, b) => (a.Animal_Type_de_permis > b.Animal_Type_de_permis ? -1 : 1));
+  /*
+  const listTrier = listePermis.sort((a:Permis, b:Permis):any=>{
+    const animal1 = a.Animal_Type_de_permis;
+    const animal2 = b.Animal_Type_de_permis;
+    console.log(animal1);
+    console.log(animal2);
+    if(animal1 > animal2){
+      return 1;
+  }else if(animal1 < animal2){
+      return -1;
+  } else{
+      return 0;
+  }
+
+    if(a.Animal_Type_de_permis > b.Animal_Type_de_permis){
+        return 1;
+    }else if(a.Animal_Type_de_permis < b.Animal_Type_de_permis){
+        return -1;
+    } else{
+        return 0;
+    }
+  });*/
+  
+ 
 };
 
 

@@ -34,6 +34,7 @@ exp.get("/", async (req: Request, res: Response) => {
 
 exp.get("/permis", async (req: Request, res: Response) => {
   let listePermis = await listerTout(req);
+  
   res.send(listePermis);
 });
 exp.get("/listeTriee", async (req: Request, res: Response) => {
