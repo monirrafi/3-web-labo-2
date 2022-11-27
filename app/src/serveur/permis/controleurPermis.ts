@@ -53,7 +53,7 @@ const chargerFichierJsonEnObjetJson = async (): Promise<Array<Permis>> => {
     "','"+ unAnimal.Permis_Date_de_début +
      "','"+ unAnimal.Permis_Date_de_fin + "','"+ unAnimal.Gardien_Territoire_ex_villes + 
      "','"+ unAnimal.Animal_Type_de_permis + "','"+ unAnimal.Animal_Nom + "'";
-     "insert into permis value ('16987','2020-10-01','2023-10-01','Montreal','Chien','kiko'";
+     //"insert into permis value ('16987','2020-10-01','2023-10-01','Montreal','Chien','kiko'";
      insererPermis(strSql);
   }
   
@@ -82,6 +82,7 @@ export const listerTout = async (req: Request): Promise<object> => {
 };
 
 export const listeTriee = async (req: Request): Promise<object> => {
+  
   let listePermis: Array<Permis> = await exucteRequetePermis("select * from permis");
   const listTrier = listePermis.sort((a:Permis, b:Permis):any=>{
     if(a.Gardien_Territoire_ex_villes > b.Gardien_Territoire_ex_villes){
